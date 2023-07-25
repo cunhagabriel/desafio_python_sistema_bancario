@@ -1,10 +1,12 @@
-menu = '''
+opcoes = '''
 ###########################################
-Qual operação deseja realizar?
-[d] Depositar
-[s] Sacar
-[e] Extrato
-[q] Sair
+
+    Qual operação deseja realizar?
+
+[d] Para Depositar | [s] Para Sacar
+[e] Para ver o extrato | [q] Para Sair
+
+   SISTEMA BANCÁRIO - 2023 - V1.0.1
 ###########################################
 => '''
 
@@ -16,7 +18,7 @@ LIMITE_SAQUES = 3
 
 while True:
     
-    opcao = input(menu)
+    opcao = input(opcoes)
     
     if opcao == "d":
         valor = float(input("Quanto deseja depositar?:"))
@@ -56,12 +58,13 @@ while True:
             print("Falha na operação! Valor inválido.")
             
     elif opcao == "e":
-        print("\n############## EXTRATO ##############")
+        print("\n############ SEU EXTRATO ###########")
         print("Não houveram movimentações na conta." if not extrato else extrato)
         print(f"\nSaldo: R$ {saldo:.2f}")
-        print("#####################################")
+        print("######################################")
     
     elif opcao == "q":
+        print("Tenha um bom dia/boa tarde/boa noite!")
         break
     
     else:
